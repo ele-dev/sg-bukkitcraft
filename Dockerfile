@@ -1,10 +1,7 @@
 # Dockerfile for basic nginx web app for static content only
-FROM ubuntu
-RUN apt-get update && apt-get install -y \
-	nginx \
-	&& rm -rf /var/lib/apt/lists/*
-COPY default /etc/nginx/sites-available/
-COPY html /var/www/html/
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+FROM httpd:2.4-alpine
+# COPY custom.conf /usr/local/apache2/conf/httpd.conf
+COPY html /usr/local/apache2/htdocs/
+# EXPOSE 80
+# CMD ["nginx", "-g", "daemon off;"]
 
