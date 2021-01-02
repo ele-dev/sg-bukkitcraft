@@ -1,0 +1,15 @@
+# sg-bukkit as microserivce behind the reverse proxy
+version: '3'
+
+services:
+    image: eledev/sg-bukkit
+    restart: always
+    expose: 
+	- "80"
+    networks:
+	- reverseproxy_default
+	- default
+
+networks:
+    reverseproxy_default: 
+	external: true
