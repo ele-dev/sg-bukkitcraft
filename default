@@ -14,7 +14,7 @@ server {
 	# possible index files 
 	index index.html index.htm index.php;
 
-	server_name _;
+	server_name sg-bukkit-host;
 
 	location / {
 		# First attempt to serve request as file, then
